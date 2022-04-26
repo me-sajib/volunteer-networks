@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Volunteer = ({ volunteer }) => {
-  const { name, description, img, title, id } = volunteer;
+  const { name, img, title, _id } = volunteer;
   return (
     <div className="col">
       <div className="card rounded-3">
@@ -12,9 +13,12 @@ const Volunteer = ({ volunteer }) => {
           </h2>
         </div>
         <div className="p-2">
-          <button className="btn w-100 d-block btn-outline-primary">
+          <Link
+            to={`/checkout/${_id}`}
+            className="btn w-100 d-block btn-outline-primary"
+          >
             DONATION
-          </button>
+          </Link>
         </div>
       </div>
     </div>

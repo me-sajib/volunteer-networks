@@ -5,7 +5,7 @@ const Volunteers = () => {
   const [volunteers, setVolunteers] = useState([]);
 
   useEffect(() => {
-    fetch("json.json")
+    fetch("http://localhost:5000/volunteers")
       .then((res) => res.json())
       .then((data) => setVolunteers(data));
   }, []);
@@ -13,14 +13,14 @@ const Volunteers = () => {
     <div className="container">
       <div className="  mt-5 w-75 mx-auto">
         <h2>Search your volunteer</h2>
-        <form class="d-flex">
+        <form className="d-flex">
           <input
-            class="form-control me-2"
+            className="form-control me-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success" type="submit">
+          <button className="btn btn-outline-success" type="submit">
             Search
           </button>
         </form>
@@ -28,7 +28,7 @@ const Volunteers = () => {
 
       <div className="row row-cols-1 row-cols-md-3 g-4 mt-5">
         {volunteers.map((volunteer) => (
-          <Volunteer key={volunteer.id} volunteer={volunteer} />
+          <Volunteer key={volunteer._id} volunteer={volunteer} />
         ))}
       </div>
     </div>
