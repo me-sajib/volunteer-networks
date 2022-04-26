@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Events from "./Pages/Dashboard/Events";
 import Checkout from "./Pages/Home/Checkout/Checkout";
 import Volunteers from "./Pages/Home/Volunteers/Volunteers";
 import Login from "./Pages/Login/Login";
@@ -21,6 +22,16 @@ function App() {
             </RequireAuth>
           }
         />
+
+        <Route
+          path="/event"
+          element={
+            <RequireAuth>
+              <Events />
+            </RequireAuth>
+          }
+        />
+
         <Route path="/registration" element={<Registration />} />
         <Route path="/login" element={<Login />} />
       </Routes>
