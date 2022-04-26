@@ -3,8 +3,10 @@ import React from "react";
 const Social = () => {
   return (
     <div className="container">
-      <div className="w-50">
-        <button className="btn btn-primary-outline">Google</button>
+      <div className="mt-5">
+        <button className="btn btn-outline-primary shadow rounded d-block w-100 ">
+          Google
+        </button>
       </div>
     </div>
   );
