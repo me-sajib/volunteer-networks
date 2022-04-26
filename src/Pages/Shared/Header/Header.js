@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container">
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarTogglerDemo01"
@@ -14,31 +15,30 @@ const Header = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="/">
+        <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a className="navbar-brand" href="/">
             Hidden brand
           </a>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link to="/" className="nav-link active">
                 Home
-              </a>
+              </Link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link " aria-current="page" href="/">
+            <li className="nav-item">
+              <Link to="/blog" className="nav-link ">
                 Blog
-              </a>
+              </Link>
             </li>
-            <li class="nav-item">
-              <a
-                class="nav-link btn btn-primary text-white"
-                aria-current="page"
-                href="/"
+            <li className="nav-item">
+              <Link
+                to="/registration"
+                className="nav-link btn btn-primary text-white"
               >
                 Registration
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
