@@ -1,0 +1,89 @@
+[
+  {
+    "id": "1",
+    "name": "Animal Donation",
+    "title": "animalShelter",
+    "img": "https://i.ibb.co/j4YQK2c/animal-Shelter.png",
+    "description": "This is a description of the animal shelter",
+    "address": "123 Main Street",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001",
+    "phone": "123-456-7890",
+    "website": "www.animalshelter.com",
+    "email": "animalShelter@donation.com"
+  },
+  {
+    "id": "2",
+    "name": "Baby Sit",
+    "title": "babySitter",
+    "img": "https://i.ibb.co/WDhFTHG/babySit.png",
+    "description": "This is a description of the babysitter",
+    "address": "123 Main Street",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001",
+    "phone": "123-456-7890",
+    "website": "www.babysitter.com"
+  },
+  {
+    "id": "3",
+    "name": "Child Support",
+    "title": "childSupport",
+    "img": "https://i.ibb.co/PTxTPhD/child-Support.png",
+    "description": "This is a description of the child support",
+    "address": "123 Main Street",
+    "city": "Africa",
+    "state": "AF",
+    "zip": "10431",
+    "phone": "123-456-7890"
+  },
+  {
+    "id": "4",
+    "name": "Pure water",
+    "title": "pureWater",
+    "img": "https://i.ibb.co/0c7c35M/clean-Water.png",
+    "description": "This is a description of the pure water",
+    "address": "123 Main Street",
+    "city": "Africa",
+    "state": "AF",
+    "zip": "10431",
+    "phone": "123-456-7890"
+  },
+  {
+    "id": "5",
+    "name": "Extra Volunteer",
+    "title": "extraVolunteer",
+    "img": "https://i.ibb.co/8d3Pm6W/extra-Volunteer.png",
+    "description": "This is a description of the extra volunteer",
+    "address": "123 Main Street",
+    "city": "Africa",
+    "state": "AF",
+    "zip": "10431",
+    "phone": "123-456-7890"
+  },
+  {
+    "id": "6",
+    "name": "Food Charity",
+    "title": "foodDonation",
+    "img": "https://i.ibb.co/wM0hkgY/food-Charity.png",
+    "description": "This is a description of the food charity",
+    "address": "123 Main Street",
+    "city": "Africa",
+    "state": "AF",
+    "zip": "10431",
+    "phone": "123-456-7890"
+  },
+  {
+    "id": "7",
+    "name": "Good education",
+    "title": "goodEducation",
+    "img": "https://i.ibb.co/qjqYrGR/good-Education.png",
+    "description": "This is a description of the good education",
+    "address": "123 Main Street",
+    "city": "Africa",
+    "state": "AF",
+    "zip": "10431",
+    "phone": "123-456-7890"
+  }
+]
