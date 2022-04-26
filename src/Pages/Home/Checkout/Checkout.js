@@ -28,7 +28,12 @@ const Checkout = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.insertedId) {
+          alert("Volunteer added successfully");
+          e.target.reset();
+        }
+      });
   };
   return (
     <div className="container">
