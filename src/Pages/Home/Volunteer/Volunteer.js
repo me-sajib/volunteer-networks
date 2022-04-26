@@ -4,9 +4,9 @@ const Volunteer = ({ volunteer }) => {
   const { name, description, img, title, id } = volunteer;
   return (
     <div className="col">
-      <div className="card rounded-3 bg-warning">
+      <div className="card rounded-3">
         <img src={img} className="img-fluid w-100 h-75" alt={title} />
-        <div className="card-body text-white">
+        <div className="card-body text-primary">
           <h2 className="card-title" style={{ textTransform: "uppercase" }}>
             {name}
           </h2>
