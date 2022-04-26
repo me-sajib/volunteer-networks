@@ -4,8 +4,19 @@ import { Link } from "react-router-dom";
 const Registration = () => {
   return (
     <div className="container">
-      <form>
-        <div className="form-group">
+      <form className="w-75 mt-4 mx-auto shadow bg-body rounded p-5">
+        <h2 className="text-center text-info">Registration Now</h2>
+        <div className="form-group mb-3">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            className="form-control"
+            id="name"
+            placeholder="Enter name"
+          />
+        </div>
+
+        <div className="form-group mb-3">
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input
             type="email"
@@ -18,7 +29,7 @@ const Registration = () => {
             We'll never share your email with anyone else.
           </small>
         </div>
-        <div className="form-group">
+        <div className="form-group mb-3">
           <label htmlFor="exampleInputPassword1">Password</label>
           <input
             type="password"
@@ -27,7 +38,7 @@ const Registration = () => {
             placeholder="Password"
           />
         </div>
-        <div className="form-group form-check">
+        <div className="form-group form-check mb-3">
           <input
             type="checkbox"
             className="form-check-input"
@@ -40,12 +51,12 @@ const Registration = () => {
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
+        <p>
+          <small>
+            already have an account? <Link to="/login"> Login</Link>{" "}
+          </small>
+        </p>
       </form>
-      <p>
-        <small>
-          if you are already an account? <Link to="/login"> Login</Link>{" "}
-        </small>
-      </p>
     </div>
   );
 };
