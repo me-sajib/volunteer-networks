@@ -1,15 +1,39 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
+import Spinner from "../Shared/Spinner/Spinner";
 
 const Registration = () => {
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const navigate = useNavigate();
+  const registration = async (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    await createUserWithEmailAndPassword(email, password);
+    if (user) {
+      user.user.updateProfile({
+        displayName: name,
+      });
+      navigate("/login");
+    }
+  };
   return (
     <div className="container">
-      <form className="w-75 mt-4 mx-auto shadow bg-body rounded p-5">
+      <form
+        onSubmit={registration}
+        className="w-75 mt-4 mx-auto shadow bg-body rounded p-5"
+      >
         <h2 className="text-center text-info">Registration Now</h2>
+        {loading && <Spinner />}
         <div className="form-group mb-3">
           <label htmlFor="name">Name</label>
           <input
             type="text"
+            name="name"
             className="form-control"
             id="name"
             placeholder="Enter name"
@@ -22,6 +46,7 @@ const Registration = () => {
             type="email"
             className="form-control"
             id="exampleInputEmail1"
+            name="email"
             aria-describedby="emailHelp"
             placeholder="Enter email"
           />
@@ -33,6 +58,7 @@ const Registration = () => {
           <label htmlFor="exampleInputPassword1">Password</label>
           <input
             type="password"
+            name="password"
             className="form-control"
             id="exampleInputPassword1"
             placeholder="Password"
@@ -51,6 +77,7 @@ const Registration = () => {
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
+        {error && <div className="alert alert-danger">{error.message}</div>}
         <p>
           <small>
             already have an account? <Link to="/login"> Login</Link>{" "}
