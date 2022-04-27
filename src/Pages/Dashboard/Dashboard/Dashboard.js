@@ -5,7 +5,7 @@ const Dashboard = () => {
   const [donar, setDonar] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/donate")
+    fetch("https://lit-bastion-45952.herokuapp.com/donate")
       .then((res) => res.json())
       .then((data) => setDonar(data));
     setLoading(false);
@@ -15,7 +15,7 @@ const Dashboard = () => {
   const removeDonar = (id) => {
     const sure = window.confirm("Are you sure you want to remove this event?");
     if (sure) {
-      fetch("http://localhost:5000/donar/" + id, {
+      fetch("https://lit-bastion-45952.herokuapp.com/donar/" + id, {
         method: "DELETE",
       })
         .then((res) => res.json())

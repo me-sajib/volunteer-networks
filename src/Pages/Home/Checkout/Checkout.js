@@ -10,7 +10,7 @@ const Checkout = () => {
   const [donation, setDonation] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/volunteer/" + donationId)
+    fetch("https://lit-bastion-45952.herokuapp.com/volunteer/" + donationId)
       .then((res) => res.json())
       .then((data) => setDonation(data[0]));
     setLoading(false);
@@ -25,7 +25,7 @@ const Checkout = () => {
     const image = donation.img;
     const volunteerId = donation._id;
     const data = { volunteerName, volunteerId, name, email, image, date };
-    fetch("http://localhost:5000/volunteer", {
+    fetch("https://lit-bastion-45952.herokuapp.com/volunteer", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

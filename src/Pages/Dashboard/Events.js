@@ -9,7 +9,7 @@ const Events = () => {
   const [donate, setDonate] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/donate/" + user.email)
+    fetch("https://lit-bastion-45952.herokuapp.com/donate/" + user.email)
       .then((res) => res.json())
       .then((data) => setDonate(data));
     setLoading(false);

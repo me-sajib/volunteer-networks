@@ -7,7 +7,7 @@ const Volunteers = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/volunteers")
+    fetch("https://lit-bastion-45952.herokuapp.com/volunteers")
       .then((res) => res.json())
       .then((data) => setVolunteers(data));
     setLoading(false);

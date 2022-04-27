@@ -7,7 +7,7 @@ const Event = ({ donate }) => {
   const removeEvent = (id) => {
     const sure = window.confirm("Are you sure you want to remove this event?");
     if (sure) {
-      fetch("http://localhost:5000/donate/" + id, {
+      fetch("https://lit-bastion-45952.herokuapp.com/donate/" + id, {
         method: "DELETE",
       })
         .then((res) => res.json())

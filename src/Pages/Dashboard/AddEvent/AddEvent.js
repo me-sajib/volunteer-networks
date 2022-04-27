@@ -24,7 +24,7 @@ const AddEvent = () => {
       website,
       email,
     };
-    fetch("http://localhost:5000/addEvent", {
+    fetch("https://lit-bastion-45952.herokuapp.com/addEvent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(event),
