@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import "./App.css";
 import AddEvent from "./Pages/Dashboard/AddEvent/AddEvent";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
@@ -53,6 +54,7 @@ function App() {
         <Route path="/registration" element={<Registration />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
