@@ -1,24 +1,23 @@
 import React from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import Spinner from "../Shared/Spinner/Spinner";
 
 const Registration = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-  const navigate = useNavigate();
+
   const registration = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     await createUserWithEmailAndPassword(email, password);
-    if (user) {
-      user.user.updateProfile({
-        displayName: name,
-      });
-      navigate("/login");
+    if (!error) {
+      toast("send verification email, please check your email inbox or spam");
+      e.target.reset();
     }
   };
   return (
