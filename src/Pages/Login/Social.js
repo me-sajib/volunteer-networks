@@ -1,5 +1,8 @@
 import React from "react";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSignInWithGoogle,
+  useSignInWithGithub,
+} from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Spinner from "../Shared/Spinner/Spinner";
@@ -7,11 +10,12 @@ import "./css/Social.css";
 
 const Social = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGithub, githubUser, gitLoading] = useSignInWithGithub(auth);
   const location = useLocation();
   const navigate = useNavigate();
   let from = location.state?.from?.pathname || "/";
 
-  if (user) {
+  if (user || githubUser) {
     navigate(from, { replace: true });
   }
   return (
@@ -25,7 +29,7 @@ const Social = () => {
             style={{ height: "2px" }}
           ></div>
         </div>
-        {loading && <Spinner />}
+        {(loading || gitLoading) && <Spinner />}
         <button
           onClick={() => signInWithGoogle()}
           className="btn btn-outline-primary shadow rounded mx-3 w-25 "
@@ -33,15 +37,12 @@ const Social = () => {
           <i class="fa-brands fa-google"></i>
         </button>
         <button
-          onClick={() => signInWithGoogle()}
+          onClick={() => signInWithGithub()}
           className="btn btn-outline-primary shadow rounded  w-25 "
         >
           <i class="fa-brands fa-github"></i>
         </button>
-        <button
-          onClick={() => signInWithGoogle()}
-          className="btn btn-outline-primary shadow rounded ms-3  w-25 "
-        >
+        <button className="btn btn-outline-primary shadow rounded ms-3  w-25 ">
           <i class="fa-brands fa-facebook"></i>
         </button>
         {error && <div className="alert alert-danger">{error.message}</div>}
