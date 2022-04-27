@@ -6,15 +6,17 @@ const Event = ({ donate }) => {
 
   const removeEvent = (id) => {
     const sure = window.confirm("Are you sure you want to remove this event?");
-    fetch("http://localhost:5000/donate/" + id, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (sure) {
-          window.location.reload();
-        }
-      });
+    if (sure) {
+      fetch("http://localhost:5000/donate/" + id, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data) {
+            window.location.reload();
+          }
+        });
+    }
   };
   return (
     <div className="col shadow rounded eventWidth mx-3">

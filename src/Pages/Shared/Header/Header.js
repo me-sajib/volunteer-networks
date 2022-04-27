@@ -41,7 +41,7 @@ const Header = () => {
               </Link>
             </li>
             {user ? (
-              <div className="d-flex">
+              <div className="d-flex gap-1">
                 <li className="nav-item">
                   <Link to="/event" className="nav-link">
                     EVENTS

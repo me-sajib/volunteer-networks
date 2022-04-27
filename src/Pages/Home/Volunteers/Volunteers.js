@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
+import Spinner from "../../Shared/Spinner/Spinner";
 import Volunteer from "../Volunteer/Volunteer";
 
 const Volunteers = () => {
   const [volunteers, setVolunteers] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("http://localhost:5000/volunteers")
       .then((res) => res.json())
       .then((data) => setVolunteers(data));
+    setLoading(false);
   }, []);
   return (
     <div className="container">
@@ -30,6 +33,7 @@ const Volunteers = () => {
         {volunteers.map((volunteer) => (
           <Volunteer key={volunteer._id} volunteer={volunteer} />
         ))}
+        {loading && <Spinner />}
       </div>
     </div>
   );

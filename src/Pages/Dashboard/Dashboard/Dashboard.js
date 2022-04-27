@@ -14,15 +14,17 @@ const Dashboard = () => {
   //   remove donar
   const removeDonar = (id) => {
     const sure = window.confirm("Are you sure you want to remove this event?");
-    fetch("http://localhost:5000/donar/" + id, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (sure) {
-          window.location.reload();
-        }
-      });
+    if (sure) {
+      fetch("http://localhost:5000/donar/" + id, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data) {
+            window.location.reload();
+          }
+        });
+    }
   };
   return (
     <div className="container">

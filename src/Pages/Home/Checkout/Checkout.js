@@ -2,15 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import auth from "../../../firebase.init";
+import Spinner from "../../Shared/Spinner/Spinner";
 
 const Checkout = () => {
   const [user] = useAuthState(auth);
   const { donationId } = useParams();
   const [donation, setDonation] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch("http://localhost:5000/volunteer/" + donationId)
       .then((res) => res.json())
       .then((data) => setDonation(data[0]));
+    setLoading(false);
   }, [donationId]);
 
   const addVolunteer = (e) => {
@@ -40,6 +43,7 @@ const Checkout = () => {
       <div className="my-5">
         <h2 className="text-center text-primary pb-5">Donation</h2>
         <div className="row ">
+          {loading && <Spinner />}
           <div className="col-md-12 col-lg-6">
             <img src={donation.img} className="img-fluid" alt="" />
           </div>
