@@ -22,7 +22,10 @@ const Social = () => {
     <div className="container">
       <div className="mt-5">
         <div className="d-flex mb-3">
-          <div class="bg-primary w-100 mt-2" style={{ height: "2px" }}></div>
+          <div
+            className="bg-primary w-100 mt-2"
+            style={{ height: "2px" }}
+          ></div>
           <div className="mx-2">OR</div>
           <div
             className="bg-primary w-100 mt-2"
@@ -34,16 +37,16 @@ const Social = () => {
           onClick={() => signInWithGoogle()}
           className="btn btn-outline-primary shadow rounded mx-3 w-25 "
         >
-          <i class="fa-brands fa-google"></i>
+          <i className="fa-brands fa-google"></i>
         </button>
         <button
           onClick={() => signInWithGithub()}
           className="btn btn-outline-primary shadow rounded  w-25 "
         >
-          <i class="fa-brands fa-github"></i>
+          <i className="fa-brands fa-github"></i>
         </button>
         <button className="btn btn-outline-primary shadow rounded ms-3  w-25 ">
-          <i class="fa-brands fa-facebook"></i>
+          <i className="fa-brands fa-facebook"></i>
         </button>
         {error && <div className="alert alert-danger">{error.message}</div>}
       </div>
