@@ -10,7 +10,7 @@ const Events = () => {
     fetch("http://localhost:5000/donate/" + user.email)
       .then((res) => res.json())
       .then((data) => setDonate(data));
-  }, []);
+  }, [user.email]);
   return (
     <div className="container py-4">
       <h1 className="text-center">ALL EVENTS </h1>
