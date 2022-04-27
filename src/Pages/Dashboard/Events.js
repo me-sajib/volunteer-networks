@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import Event from "./Event";
 
 const Events = () => {
   const [user] = useAuthState(auth);
@@ -11,14 +12,11 @@ const Events = () => {
       .then((data) => setDonate(data));
   }, []);
   return (
-    <div className="container">
-      <h1>all events </h1>
-      <div className="row">
+    <div className="container py-4">
+      <h1 className="text-center">ALL EVENTS </h1>
+      <div className="row row-cols-1 row-cols-md-2 g-3 mt-5">
         {donate.map((donate) => (
-          <li>
-            {donate.volunteerName}: email: {donate.email}
-            <img src={donate.image} className="img-fluid" alt="" />
-          </li>
+          <Event key={donate._id} donate={donate} />
         ))}
       </div>
     </div>
