@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import Events from "./Pages/Dashboard/Events";
 import Checkout from "./Pages/Home/Checkout/Checkout";
 import Volunteers from "./Pages/Home/Volunteers/Volunteers";
@@ -28,6 +29,14 @@ function App() {
           element={
             <RequireAuth>
               <Events />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
             </RequireAuth>
           }
         />
