@@ -18,6 +18,7 @@ const Registration = () => {
     if (!error) {
       toast("send verification email, please check your email inbox or spam");
       e.target.reset();
+      window.location = "/";
     }
   };
   return (
