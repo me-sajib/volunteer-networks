@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import AddEvent from "./Pages/Dashboard/AddEvent/AddEvent";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import Events from "./Pages/Dashboard/Events";
 import Checkout from "./Pages/Home/Checkout/Checkout";
@@ -37,6 +38,14 @@ function App() {
           element={
             <RequireAuth>
               <Dashboard />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/add"
+          element={
+            <RequireAuth>
+              <AddEvent />
             </RequireAuth>
           }
         />
