@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Spinner from "../Shared/Spinner/Spinner";
 import Social from "./Social";
+import axios from "axios";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -13,6 +14,12 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post("http://localhost:5000/addToken", {
+      email,
+    });
+    // console.log(data);
+    localStorage.setItem("token", data.token);
+
     if (user) {
       window.location = "/";
     }
